@@ -1,6 +1,8 @@
 # Online-Salon-Booking-System
-
-
+<br>
+Project Demo URL - https://drive.google.com/file/d/1ZQXUE5lNRzb7qc18_QEzqghxQjo_Typh/view?usp=sharing
+<br>
+<br>
 ![image](https://user-images.githubusercontent.com/63720536/149984211-d4157b73-91e6-4858-999d-0e6f7ec5c2bf.png)
 The above figure represents home page which is implemented using HTML, CSS  JS and EJS. The focus was on making something simplistic to shift the user’s attention onto the things that mattered the most, which are information about the login and Salon lists. The focal point of the project was to make sure the data was stored and presented in an efficient and informative manner along with ensuring that the user was never overwhelmed with the amount of data being shown on the screen to them.
 <br>
