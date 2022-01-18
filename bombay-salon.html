@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Online Saloon Booking System</title>
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+      <link href="https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Sclssors.png" rel="icon">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      <link href="css/login.css" rel="stylesheet">
+      <script src="js/main.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="css/mark-your-calendar.css">
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script type="text/javascript" src="js/mark-your-calendar.js"></script>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="index.html">BookMySalon</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <ul>
+            <li><a class="nav-link active" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a class="nav-link" href="salon-lists.html"><i class="fa fa-list"></i> Show Salons</a></li>
+            <li class="dropdown"><a href="booking-history.html"><span><i class="fa fa-user"></i>My profile 
+              <i class="fa fa-caret-down" id="down-icon"></i><i class="fa fa-caret-up" id="up-icon"></i></span></a>
+              <ul>
+                <li><a href="booking-history.html"><i class="fa fa-history"></i> Booking History</a></li>
+                <li><a href=""><i class="fa fa-sign-out"></i> Log out</a></li>
+              </ul>
+          </ul>       
+        </ul>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+<div class="individual-salon">
+  <div class="container">
+    <div class="salon-info">
+      <img id="salon-banner" src="img/salon1.jpg">
+      <div class="name-board">
+          <h1>Bombay Salon Ashokapuram</h1>
+          <address>
+            <h5>Address</h5>
+            <p>
+              The National Institute of Engineering <br>
+              Ashokapuram Mysore<br>
+              Karnataka <br>
+              <a class="map-direction" href="https://maps.google.com/maps?q=" target="_blank"><img src="https://img.icons8.com/dusk/64/000000/google-maps-new.png"/> Open in map</a><br>
+              <strong>Phone:</strong> +91 55555 55555<br>
+              <strong>Email:</strong> <a href="mailto:bookmysalon@gmail.com">bookmysalon@gmail.com</a><br>
+            </p>
+          </div>
+          </address>
+      </div>
+    </div>
+  </div>
+
+    <section id="team" class="team section-bg">
+      <div class="salonlist services-offered">
+        <div class="row">
+           <div class="col-lg-12" id="lists">
+            <div class="member d-flex align-items-start">
+              <div class="member-info">
+                <h4>Hair cut</h4>
+              </div>
+              <div class="member-info">
+                <h4>50/-</h4>
+              </div>
+              <div class="member-info">
+                <h4 class="btn btn-primary">Add+</h4>
+              </div>
+            </div>
+            <div class="member d-flex align-items-start">
+              <div class="member-info">
+                <h4>Hair cut</h4>
+              </div>
+              <div class="member-info">
+                <h4>50/-</h4>
+              </div>
+              <div class="member-info">
+                <h4 class="btn btn-primary">Add+</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row justify-content-md-center" id="chairs-display">
+        <div class="col-xl-3">
+          <div class="icon-box">
+            <div class="chairs"><img src="img/chairs.png"></div>
+            <h4 class="text-center">Chair 1</h4>
+            <h6 class="text-center">Create your Account</h6>
+            <div class="jquery-script-clear"></div>
+            <div class="container1">
+              <div id="picker"></div>
+               <div>
+                  <div id="selected-dates"></div>
+              </div>
+            </div>
+            <script>
+              (function($) {
+                $('#picker').markyourcalendar({
+                  availability: [
+                    ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'],
+                    ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm']
+                  ],
+                  isMultiple: false,
+                  onClick: function(ev, data) {
+                    // data is a list of datetimes
+                    console.log(data);
+                    var html = ``;
+                    $.each(data, function() {
+                      var d = this.split(' ')[0];
+                      var t = this.split(' ')[1];
+                      html += `<p class="btn btn-primary">` + d + ` at ` + t + ` Chair 1 </p>`;
+                      
+                    });
+                    $('#selected-dates').html(html);
+                  },
+                  onClickNavigator: function(ev, instance) {
+                    var arr = [
+                      [
+                        ['4:00', '5:00', '6:00', '7:00', '8:00']
+                      ]
+                    ]
+                    instance.setAvailability(arr[rn]);
+                  }
+                });
+              })(jQuery);
+            </script>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="icon-box">
+            <div class="chairs"><img src="img/chairs.png"></div>
+            <h4 class="text-center">Chair 2</h4>
+            <h6 class="text-center">Create your Account</h6>
+            <div class="jquery-script-clear"></div>
+            <div class="container1">
+              <div id="picker2"></div>
+
+            </div>
+            <script>
+              (function($) {
+                $('#picker2').markyourcalendar({
+                  availability: [
+                    ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'],
+                    ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm']
+                  ],
+                  isMultiple: false,
+                  onClick: function(ev, data) {
+                    // data is a list of datetimes
+                    console.log(data);
+                    var html = ``;
+                    $.each(data, function() {
+                      var d = this.split(' ')[0];
+                      var t = this.split(' ')[1];
+                      html += `<p>` + d + ` ` + t + ` Chair 2 </p>`;
+                    });
+                    $('#selected-dates').html(html);
+                  },
+                  onClickNavigator: function(ev, instance) {
+                    var arr = [
+                      [
+                        ['4:00', '5:00', '6:00', '7:00', '8:00']
+                      ]
+                    ]
+                    instance.setAvailability(arr[rn]);
+                  }
+                });
+              })(jQuery);
+            </script>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="icon-box">
+            <div class="chairs"><img src="img/chairs.png"></div>
+            <h4 class="text-center">Chair 3</h4>
+            <h6 class="text-center">Create your Account</h6>
+            <div class="jquery-script-clear"></div>
+            <div class="container1">
+              <div id="picker3"></div>
+
+            </div>
+            <script>
+              (function($) {
+                $('#picker3').markyourcalendar({
+                  availability: [
+                    ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm'],
+                    ['9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm','2:00pm','3:00pm','4:00pm','5:00pm','6:00pm','7:00pm','8:00pm']
+                  ],
+                  isMultiple: false,
+                  onClick: function(ev, data) {
+                    // data is a list of datetimes
+                    console.log(data);
+                    var html = ``;
+                    $.each(data, function() {
+                      var d = this.split(' ')[0];
+                      var t = this.split(' ')[1];
+                      html += `<p>` + d + ` ` + t + ` Chair 3 </p>`;
+                    });
+                    $('#selected-dates').html(html);
+                  },
+                  onClickNavigator: function(ev, instance) {
+                    var arr = [
+                      [
+                        ['4:00', '5:00', '6:00', '7:00', '8:00']
+                      ]
+                    ]
+                    instance.setAvailability(arr[rn]);
+                  }
+                });
+              })(jQuery);
+            </script>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Address</h3>
+            <p>
+              The National Institute of Engineering <br>
+              Ashokapuram Mysore<br>
+              Karnataka <br><br>
+              <strong>Phone:</strong> +91 55555 55555<br>
+              <strong>Email:</strong> <a href="mailto:bookmysalon@gmail.com">bookmysalon@gmail.com</a><br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="register-saloon.html">Register salon</a></li>
+              <li><a href="#">Advertisement</a></li>
+              <li><a href="#">Blogs</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Follow us in all our social media handles to get in touch with us</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>SRUJAN RAI K</span></strong>. All Rights Reserved
+      </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</body>
+
+</html>

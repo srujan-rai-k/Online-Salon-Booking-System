@@ -1,0 +1,107 @@
+
+#myc-container1 {
+    width: inherit;
+}
+
+#myc-nav-container1 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#myc-current-month-year-container1 {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: top;
+    width: 68%;
+}
+
+#myc-prev-week-container1,#myc-next-week-container1  {
+    display: none;
+}
+
+#myc-week-container1 {
+    border: 1px solid #e0e0e0;
+}
+
+#myc-dates-container1 {
+    background-color: #fafafa;
+}
+
+.myc-date-header {
+    display: inline-block;
+    min-height: 50px;
+    padding: 15px 0px 15px 15px;
+    vertical-align: top;
+    width: 49%;
+}
+
+.myc-date-header:first-of-type {
+    padding-left: 15px;
+}
+
+.myc-date-header:last-of-type {
+    border-right: none;
+    width: 45%;
+    border-left: 1px solid #e0e0e0;
+}
+
+#myc-available-time-container1 {
+    border-top: 1px solid #e0e0e0;
+    min-height: 150px;
+}
+
+.myc-day-time-container1 {
+    /*border-right: 1px solid #e0e0e0;*/
+    display: inline-block;
+    height: 100%;
+    padding: 15px 15px 15px 15px;
+    vertical-align: top;
+    width: 48.9%;
+}
+
+.myc-day-time-container1:first-of-type {
+    padding-left: 15px;
+}
+
+.myc-day-time-container1:last-of-type {
+    border-right: none;
+    border-left: 1px solid #e0e0e0;
+}
+
+.myc-date-number {
+    font-size: 1.8em;
+    font-weight: lighter;
+}
+
+.myc-available-time {
+    background-color: #47b2e4;
+    border-radius: 20px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+.myc-available-time.selected, .myc-available-time:hover {
+    background-color: #222;
+}
+
+.myc-date-display {
+    font-weight: lighter;
+}
+
+@media only screen and (max-width: 768px) {
+    .myc-date-header, .myc-day-time-container1 {
+        width: 45%;
+    }
+    /*.myc-date-header:last-of-type, .myc-day-time-container1:last-of-type {
+        width: 12%;
+    }*/
+}
+
+
